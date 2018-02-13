@@ -4,6 +4,7 @@
 !scenes
 !.gitignore
 !.travis.yml
+!fake.pem
 secrets.yaml
 known_devices.yaml
 
