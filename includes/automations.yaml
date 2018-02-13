@@ -1,0 +1,143 @@
+- id: update notifications
+  alias: Update notifications
+  trigger:
+    - platform: state
+      entity_id: sensor.current_ha_version
+  action:
+    - service: notify.telegram_notify
+      data_template:
+        message: "Home Assistant {{ states.sensor.current_ha_version.state }} is now available. Check https://home-assistant.io/blog/categories/release-notes/"
+
+- id: login failed
+  alias: Login attempt failed
+  trigger:
+    - platform: state
+      entity_id: persistent_notification.httplogin
+  action:
+    - service: notify.telegram_notify
+      data_template:
+        message: "{{ states.persistent_notification.httplogin.state }}"
+
+- id: helligkeit anpassen
+  alias: Helligkeit anpassen
+  trigger:
+    - platform: state
+      entity_id: input_slider.brightness_all
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+        - group.lights_all
+      data_template:
+        brightness: '{{ states( "input_slider.brightness_all" )|round( 0 ) }}'
+
+- id: 'telegram bot that reply pong to ping'
+  alias: 'telegram bot that reply pong to ping'
+  hide_entity: true
+  trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/ping'
+  action:
+    - service: notify.telegram_notify
+      data:
+        message: 'pong'
+
+- id: "Media player paused/stopped"
+  alias: "Media player paused/stopped"
+  trigger:
+      platform: state
+      entity_id: media_player.spotify
+      from: 'playing'
+      to: 'paused'
+  action:
+      - service: light.turn_on
+        entity_id: light.Schlafzimmer
+
+- id: 'test telegram bot'
+  alias: 'test telegram bot'
+  hide_entity: true
+  trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/start'
+  action:
+    - service: notify.telegram_notify
+      data:
+        message: 'commands'
+        data:
+          keyboard:
+            - '/ping, /status'
+            - '/weather, /lightsoff'
+
+- id: 'telegram status'
+  alias: 'telegram status'
+  hide_entity: true
+  trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/status'
+  action:
+    - service: notify.telegram_notify
+      data_template:
+        message: |
+          All Lights - {{ states.group.lights_all.state }}                   
+          Wohnzimmer rechts - {{ states.light.Wohnzimmer_links.state }}
+          Wohnzimmer links - {{ states.light.Wohnzimmer_rechts.state }} 
+          Wohzimmer LightStrips - {{ states.light.LightStrips.state }} 
+          Schlafzimmer - {{ states.light.Schlafzimmer.state }}
+
+- id: 'telegram lightsoff'
+  alias: 'telegram lightsoff'
+  hide_entity: true
+  trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/lightsoff'
+  action:
+      service: light.turn_off
+      entity_id: group.lights_all
+
+- id: 'telegram bot weather'
+  alias: 'telegram bot weather'
+  hide_entity: true
+  trigger:
+      platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/weather'
+  action:
+    - service: notify.telegram_notify
+      data_template:
+        message: | 
+          - Aussen - 
+          >> Temperatur {{states.sensor.netatmo_aussenraum_temperature.state}}
+          >> Luftfeuchtigkeit {{states.sensor.netatmo_aussenraum_humidity.state}}
+          
+          - Schlafzimmer - 
+          >> Temperatur {{states.sensor.netatmo_schlafzimmer_temperature.state}}
+          >> Luftfeuchtigkeit {{states.sensor.netatmo_schlafzimmer_humidity.state}}
+          >> CO2 {{states.sensor.netatmo_schlafzimmer_co2.state}} ppm
+          
+          - Wohnzimmer - 
+          >> Temperatur {{states.sensor.netatmo_wohnimmer_temperature.state}}
+          >> Luftfeuchtigkeit {{states.sensor.netatmo_wohnzimmer_humidity.state}}
+          >> CO2 {{states.sensor.netatmo_wohnzimmer_co2.state}} ppm
+          
+          - Bad - 
+          >> Temperatur {{states.sensor.netatmo_bad_temperature.state}}
+          >> Luftfeuchtigkeit {{states.sensor.netatmo_bad_humidity.state}}
+          >> CO2 {{states.sensor.netatmo_bad_co2.state}} ppm
+#- alias: "Media player playing"
+#  trigger:
+#    - platform: state
+#      entity_id: media_player.spotify
+#      to: 'playing'
+#      from: 'paused'
+#  action:
+#      service: light.turn_off
+#      entity_id: light.Schlafzimmer

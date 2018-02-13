@@ -1,0 +1,4 @@
+- name: telegram_notify
+  platform: telegram
+  api_key: !secret telegram_notify_api_key
+  chat_id: !secret telegram_notify_chat_id

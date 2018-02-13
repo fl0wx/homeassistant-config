@@ -1,0 +1,14 @@
+*
+!*/ 
+!*.yaml
+!scenes
+!.gitignore
+!.travis.yml
+secrets.yaml
+known_devices.yaml
+
+lib
+icloud
+deps
+tts
+www

@@ -1,0 +1,63 @@
+sensor.netatmo_aussenraum_min_temp:
+  platform: netatmo
+  unique_id: 2-min_temp
+sensor.netatmo_schlafzimmer_battery:
+  platform: netatmo
+  unique_id: 3-battery_vp
+sensor.netatmo_wohnzimmer_wifi:
+  platform: netatmo
+  unique_id: 0-wifi_status
+sensor.netatmo_schlafzimmer_radio:
+  platform: netatmo
+  unique_id: 3-rf_status
+sensor.netatmo_wohnzimmer_co2:
+  platform: netatmo
+  unique_id: 0-co2
+sensor.netatmo_schlafzimmer_temperature:
+  platform: netatmo
+  unique_id: 3-temperature
+sensor.netatmo_wohnzimmer_max_temp:
+  platform: netatmo
+  unique_id: 0-max_temp
+sensor.netatmo_wohnzimmer_humidity:
+  platform: netatmo
+  unique_id: 0-humidity
+sensor.netatmo_aussenraum_temperature:
+  platform: netatmo
+  unique_id: 2-temperature
+sensor.netatmo_aussenraum_battery:
+  platform: netatmo
+  unique_id: 2-battery_vp
+sensor.netatmo_wohnzimmer_noise:
+  platform: netatmo
+  unique_id: 0-noise
+sensor.netatmo_wohnzimmer_min_temp:
+  platform: netatmo
+  unique_id: 0-min_temp
+sensor.netatmo_aussenraum_max_temp:
+  platform: netatmo
+  unique_id: 2-max_temp
+sensor.netatmo_aussenraum_radio:
+  platform: netatmo
+  unique_id: 2-rf_status
+sensor.netatmo_wohnzimmer_pressure:
+  platform: netatmo
+  unique_id: 0-pressure
+sensor.netatmo_aussenraum_humidity:
+  platform: netatmo
+  unique_id: 2-humidity
+sensor.netatmo_wohnzimmer_temperature:
+  platform: netatmo
+  unique_id: 0-temperature
+sensor.netatmo_schlafzimmer_humidity:
+  platform: netatmo
+  unique_id: 3-humidity
+sensor.netatmo_schlafzimmer_max_temp:
+  platform: netatmo
+  unique_id: 3-max_temp
+sensor.netatmo_schlafzimmer_min_temp:
+  platform: netatmo
+  unique_id: 3-min_temp
+sensor.netatmo_schlafzimmer_co2:
+  platform: netatmo
+  unique_id: 3-co2

@@ -1,0 +1,81 @@
+- platform: wunderground
+  api_key: !secret wunderground_api_key
+  monitored_conditions:
+    - alerts
+    - dewpoint_c
+    - feelslike_c
+    - heat_index_c
+    - location
+    - observation_time
+    - precip_1hr_metric
+    - precip_today_metric
+    - pressure_mb
+    - relative_humidity
+    - solarradiation
+    - temp_c
+    - UV
+    - visibility_km
+    - weather
+    - wind_dir
+    - wind_gust_kph
+    - wind_kph
+
+- platform: cert_expiry
+  host: !secret host
+
+#- platform: statistics
+#  name: 'pws_stats'
+#  entity_id: sensor.pws_temp_c
+
+- platform: synologydsm
+  host: !secret synology_host
+  username: !secret synology_username
+  password: !secret synology_password
+  monitored_conditions:
+    - cpu_total_load
+    - memory_real_usage
+    - network_up
+    - network_down
+
+- platform: command_line
+  command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
+  name: Current HA Version
+  
+- platform: netatmo
+  station: fl0w_netatmo
+  modules:
+    Wohnzimmer:
+      - temperature
+      - min_temp
+      - max_temp
+      - humidity
+      - co2
+      - wifi_status
+      - noise
+      - pressure
+  
+    Aussenraum:
+      - temperature
+      - humidity
+      - min_temp
+      - max_temp
+      - battery_vp
+      - rf_status
+    
+    Schlafzimmer:
+      - temperature
+      - humidity
+      - min_temp
+      - max_temp
+      - co2
+      - battery_vp
+      - rf_status
+      
+    Bad:
+      - temperature
+      - humidity
+      - min_temp
+      - max_temp
+      - co2
+      - battery_vp
+      - rf_status

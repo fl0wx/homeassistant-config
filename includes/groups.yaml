@@ -1,0 +1,115 @@
+overview:
+  view: yes
+  name:  Uebersicht
+  entities:
+    - group.weather
+    - group.lights_all
+    - group.weather_net
+    - group.tv
+    - media_player.spotify
+    - group.livingroom_net
+    - group.weather_net
+    - group.sleeproom_net
+
+sleeproom_view:
+  view: yes
+  name: Schlafzimmer
+  entities:
+    - group.sleeproom_net
+
+living_view:
+  view: yes
+  name: Wohnzimmer
+  entities:
+    - group.livingroom_net
+
+bathroom_view:
+  view: yes
+  name: Bad
+  entities:
+    - group.bathroom_net
+
+tv:
+  name: Samsung TV
+  entities:
+    - media_player.samsung_tv_remote
+
+weather:
+  name: Wetter API - Karlsruhe
+  entities:
+    - sun.sun
+    - sensor.pws_alerts
+    - sensor.pws_temp_c
+    - sensor.pws_temp_low_avg_c
+    - sensor.pws_temp_high_avg_c    
+    - sensor.pws_precip_1hr_metric
+    - sensor.pws_precip_today_metric
+    - sensor.pws_pressure_mb
+    - sensor.pws_pressure_trend
+    - sensor.pws_relative_humidity
+    - sensor.pws_solarradiation
+    - sensor.pws_dewpoint_c
+    - sensor.pws_feelslike_c
+    - sensor.pws_heat_index_c
+    - sensor.pws_uv
+    - sensor.pws_visibility_km
+    - sensor.pws_weather
+    - sensor.pws_wind_dir
+    - sensor.pws_wind_gust_kph
+    - sensor.pws_wind_kph
+    - sensor.pws_location
+    - sensor.pws_observation_time
+     
+weather_net:
+  name: Wetter Netatmo Aussen
+  entities:
+    - sensor.netatmo_aussenraum_humidity
+    - sensor.netatmo_aussenraum_temperature
+    - sensor.netatmo_aussenraum_max_temp
+    - sensor.netatmo_aussenraum_min_temp
+    - sensor.netatmo_aussenraum_battery
+    - sensor.netatmo_aussenraum_radio
+    
+sleeproom_net:
+  name: Netatmo Schlafzimmer
+  entities:
+    - sensor.netatmo_schlafzimmer_co2
+    - sensor.netatmo_schlafzimmer_humidity
+    - sensor.netatmo_schlafzimmer_temperature
+    - sensor.netatmo_schlafzimmer_max_temp
+    - sensor.netatmo_schlafzimmer_min_temp
+    - sensor.netatmo_schlafzimmer_radio
+    - sensor.netatmo_schlafzimmer_battery
+      
+livingroom_net:
+  name: Netatmo Wohnzimmer
+  entities:
+    - sensor.netatmo_wohnzimmer_co2
+    - sensor.netatmo_wohnzimmer_humidity
+    - sensor.netatmo_wohnzimmer_temperature
+    - sensor.netatmo_wohnzimmer_pressure
+    - sensor.netatmo_wohnzimmer_noise
+    - sensor.netatmo_wohnzimmer_max_temp
+    - sensor.netatmo_wohnzimmer_min_temp
+    - sensor.netatmo_wohnzimmer_wifi
+
+bathroom_net:
+  name: Netatmo Bad
+  entities:
+    - sensor.netatmo_bad_co2
+    - sensor.netatmo_bad_humidity
+    - sensor.netatmo_bad_temperature
+    - sensor.netatmo_bad_max_temp
+    - sensor.netatmo_bad_min_temp
+    - sensor.netatmo_bad_radio
+    - sensor.netatmo_bad_battery
+
+lights_all:
+  name: Alle Lampen
+  entities:
+    - light.Wohnzimmer_links
+    - light.Schlafzimmer
+    - light.Wohnzimmer_rechts
+    - light.LightStrips
+    - light.Living_Colors
+    - input_slider.brightness_all
