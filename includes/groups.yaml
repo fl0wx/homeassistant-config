@@ -23,11 +23,11 @@ living_view:
   entities:
     - group.livingroom_net
 
-bathroom_view:
+kueche_view:
   view: yes
-  name: Bad
+  name: Kueche
   entities:
-    - group.bathroom_net
+    - group.kueche_net
 
 tv:
   name: Samsung TV
@@ -93,16 +93,16 @@ livingroom_net:
     - sensor.netatmo_wohnzimmer_min_temp
     - sensor.netatmo_wohnzimmer_wifi
 
-bathroom_net:
-  name: Netatmo Bad
+kueche_net:
+  name: Netatmo Kueche
   entities:
-    - sensor.netatmo_bad_co2
-    - sensor.netatmo_bad_humidity
-    - sensor.netatmo_bad_temperature
-    - sensor.netatmo_bad_max_temp
-    - sensor.netatmo_bad_min_temp
-    - sensor.netatmo_bad_radio
-    - sensor.netatmo_bad_battery
+    - sensor.netatmo_kuche_co2
+    - sensor.netatmo_kuche_humidity
+    - sensor.netatmo_kuche_temperature
+    - sensor.netatmo_kuche_max_temp
+    - sensor.netatmo_kuche_min_temp
+    - sensor.netatmo_kuche_radio
+    - sensor.netatmo_kuche_battery
 
 lights_all:
   name: Alle Lampen
