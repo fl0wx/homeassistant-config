@@ -71,7 +71,7 @@
       - battery_vp
       - rf_status
       
-    Bad:
+    Kuche:
       - temperature
       - humidity
       - min_temp
@@ -79,3 +79,21 @@
       - co2
       - battery_vp
       - rf_status
+      
+#Monitor Raspberry
+  - platform: command_line
+    name: CPU Temp
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) }}'
+    
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: load_1m
+      - type: processor_use
+      - type: last_boot
+      - type: packets_in
+      - type: packets_out
