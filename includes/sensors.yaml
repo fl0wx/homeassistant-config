@@ -40,7 +40,7 @@
 - platform: command_line
   command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
   name: Current HA Version
-  
+
 - platform: netatmo
   station: fl0w_netatmo
   modules:
@@ -79,21 +79,21 @@
       - co2
       - battery_vp
       - rf_status
-      
+
 #Monitor Raspberry
-  - platform: command_line
-    name: CPU Temp
-    command: "cat /sys/class/thermal/thermal_zone0/temp"
-    unit_of_measurement: "°C"
-    value_template: '{{ value | multiply(0.001) }}'
-    
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /
-      - type: memory_use_percent
-      - type: load_1m
-      - type: processor_use
-      - type: last_boot
-      - type: packets_in
-      - type: packets_out
+- platform: command_line
+  name: CPU Temp
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) }}'
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_use_percent
+    - type: load_1m
+    - type: processor_use
+    - type: last_boot
+    - type: network_in
+    - type: network_out

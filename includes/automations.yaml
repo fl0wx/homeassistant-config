@@ -85,10 +85,11 @@
       data_template:
         message: |
           All Lights - {{ states.group.lights_all.state }}                   
-          Wohnzimmer rechts - {{ states.light.Wohnzimmer_links.state }}
-          Wohnzimmer links - {{ states.light.Wohnzimmer_rechts.state }} 
-          Wohzimmer LightStrips - {{ states.light.LightStrips.state }} 
-          Schlafzimmer - {{ states.light.Schlafzimmer.state }}
+          Wohnzimmer rechts - {{ states.light.wz_links.state }}
+          Wohnzimmer links - {{ states.light.wz_rechts.state }} 
+          Wohzimmer LightStrips - {{ states.light.wz_tv.state }} 
+          Schlafzimmer - {{ states.light.sz_decke.state }}
+          Flur - {{ states.light.light.f_decke.state }}
 
 - id: 'telegram lightsoff'
   alias: 'telegram lightsoff'

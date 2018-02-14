@@ -16,12 +16,19 @@ sleeproom_view:
   name: Schlafzimmer
   entities:
     - group.sleeproom_net
+    - light.sz_decke
+    - light.schlafzimmer
 
 living_view:
   view: yes
   name: Wohnzimmer
   entities:
     - group.livingroom_net
+    - light.wz_links
+    - light.wz_rechts
+    - light.wz_tv
+    - light.wohnzimmer
+    - group.tv
 
 kueche_view:
   view: yes
@@ -107,9 +114,9 @@ kueche_net:
 lights_all:
   name: Alle Lampen
   entities:
-    - light.Wohnzimmer_links
-    - light.Schlafzimmer
-    - light.Wohnzimmer_rechts
-    - light.LightStrips
-    - light.Living_Colors
-    - input_slider.brightness_all
+    - light.f_decke
+    - light.livingcolors_1
+    - light.sz_decke
+    - light.wz_links
+    - light.wz_rechts
+    - light.wz_tv

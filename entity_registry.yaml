@@ -1,0 +1,18 @@
+light.wz_links:
+  platform: hue
+  unique_id: 00:17:88:01:02:8f:b5:5b-0b
+light.sz_decke:
+  platform: hue
+  unique_id: 00:17:88:01:02:dd:d4:fc-0b
+light.f_decke:
+  platform: hue
+  unique_id: 00:17:88:01:00:e7:61:31-0b
+light.livingcolors_1:
+  platform: hue
+  unique_id: 00:17:88:01:00:17:16:87-0b
+light.wz_rechts:
+  platform: hue
+  unique_id: 00:17:88:01:02:88:99:af-0b
+light.wz_tv:
+  platform: hue
+  unique_id: 00:17:88:01:00:cf:7b:ce-0b
