@@ -10,6 +10,7 @@ overview:
     - group.livingroom_net
     - group.weather_net
     - group.sleeproom_net
+    - group.raspberry
 
 sleeproom_view:
   view: yes
@@ -120,3 +121,15 @@ lights_all:
     - light.wz_links
     - light.wz_rechts
     - light.wz_tv
+    
+raspberry:
+  name: Raspberry Stats
+  entities:
+    - sensor.disk_use_percent
+    - sensor.last_boot
+    - sensor.load_1m
+    - sensor.memory_use_percent
+    - sensor.cpu_temp
+    - sensor.processor_use
+    - sensor.network_in
+    - sensor.network_out

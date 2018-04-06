@@ -20,8 +20,8 @@
     - wind_gust_kph
     - wind_kph
 
-- platform: cert_expiry
-  host: !secret host
+#- platform: cert_expiry
+#  host: !secret host
 
 #- platform: statistics
 #  name: 'pws_stats'
@@ -36,10 +36,6 @@
     - memory_real_usage
     - network_up
     - network_down
-
-- platform: command_line
-  command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
-  name: Current HA Version
 
 - platform: netatmo
   station: fl0w_netatmo

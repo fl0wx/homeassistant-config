@@ -105,5 +105,6 @@ automation: !include includes/automations.yaml
 notify: !include includes/notify.yaml
 group: !include includes/groups.yaml
 input_number: !include includes/input-sliders.yaml
+shell_command: !include includes/shell-commands.yaml
 
 

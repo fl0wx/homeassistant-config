@@ -133,6 +133,14 @@
           >> Temperatur {{states.sensor.netatmo_bad_temperature.state}}
           >> Luftfeuchtigkeit {{states.sensor.netatmo_bad_humidity.state}}
           >> CO2 {{states.sensor.netatmo_bad_co2.state}} ppm
+- id: 'update ddns'
+  alias: 'Update Strato DDNS'
+  trigger:
+    platform: time
+    minutes: 5
+    seconds: 00
+  action:
+    service: shell_commands.update_ddns
 #- alias: "Media player playing"
 #  trigger:
 #    - platform: state
@@ -142,3 +150,4 @@
 #  action:
 #      service: light.turn_off
 #      entity_id: light.Schlafzimmer
+
